@@ -15,6 +15,7 @@ interface CartState {
 enum CartActionTypes {
   ADD = "ADD",
   REMOVE = "REMOVE",
+  CLEAR = "CLEAR",
 }
 
 type CartActionType = keyof typeof CartActionTypes;
@@ -78,6 +79,10 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
     };
   }
 
+  if (action.type === CartActionTypes.CLEAR) {
+    return defaultCartState;
+  }
+
   return defaultCartState;
 };
 
@@ -99,11 +104,16 @@ const CartProvider = (props: CartProviderProps) => {
     dispatchCartAction({ type: CartActionTypes.REMOVE, id });
   };
 
+  const clearCartHandler = () => {
+    dispatchCartAction({ type: CartActionTypes.CLEAR });
+  };
+
   const cartContext: CartContextType = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
+    clearCart: clearCartHandler,
   };
 
   return (
