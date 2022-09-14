@@ -32,3 +32,9 @@
     - Consider the example below. As items are removed or added to the TodoList the in prop is toggled automatically by the `<TransitionGroup>`.
 
     - Note that `<TransitionGroup>` does not define any animation behavior! Exactly how a list item animates is up to the individual transition component. This means you can mix and match animations across different list items.
+
+## Alternatives
+
+- [React Motion](https://github.com/chenglou/react-motion)
+- [React Move](https://github.com/sghall/react-move)
+- [React Router Transition](https://github.com/maisano/react-router-transition)
