@@ -1,8 +1,11 @@
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
+
+import { useContext } from "react";
+import { ProductsContext } from "../../context/product-context";
 
 import Card from "../UI/Card";
 import "./ProductItem.css";
-import { toggleFav } from "../../store/actions/products";
+// import { toggleFav } from "../../store/actions/products";
 
 interface ProductItemProps {
   id: string;
@@ -12,10 +15,12 @@ interface ProductItemProps {
 }
 
 function ProductItem(props: ProductItemProps) {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
+  const toggleFav = useContext(ProductsContext).toggleFav;
 
   function toggleFavHandler() {
-    dispatch(toggleFav(props.id));
+    // dispatch(toggleFav(props.id));
+    toggleFav(props.id);
   }
 
   return (

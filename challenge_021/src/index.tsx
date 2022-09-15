@@ -1,32 +1,38 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Provider } from "react-redux";
-import { combineReducers, createStore } from "redux";
+// import { Provider } from "react-redux";
+// import { combineReducers, createStore } from "redux";
 import { BrowserRouter } from "react-router-dom";
 
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import productReducer from "./store/reducers/products";
+// import productReducer from "./store/reducers/products";
+import ProductsProvider from "./context/product-context";
 
-const rootReducer = combineReducers({
-  shop: productReducer,
-});
+// const rootReducer = combineReducers({
+//   shop: productReducer,
+// });
 
-const store = createStore(rootReducer);
+// const store = createStore(rootReducer);
 
-export type RootState = ReturnType<typeof store.getState>;
+// export type RootState = ReturnType<typeof store.getState>;
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
+    {/* <Provider store={store}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </Provider>
+    </Provider> */}
+    <ProductsProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ProductsProvider>
   </React.StrictMode>
 );
 
