@@ -1,19 +1,24 @@
 // import { useSelector } from "react-redux";
 // import { RootState } from "..";
 
-import { useContext } from "react";
+// import { useContext } from "react";
 
 import FavoriteItem from "../components/Favorites/FavoriteItem";
-import { ProductsContext } from "../context/product-context";
+// import { ProductsContext } from "../context/product-context";
+import { useStore } from "../hooks-store/store";
 import "./Products.css";
 
 function Favorites() {
   // const favoriteProducts = useSelector((state: RootState) =>
   //   state.shop.products.filter((p) => p.isFavorite)
   // );
-  const favoriteProducts = useContext(ProductsContext).products.filter(
-    (p) => p.isFavorite
-  );
+
+  // const favoriteProducts = useContext(ProductsContext).products.filter(
+  //   (p) => p.isFavorite
+  // );
+
+  const state = useStore()[0];
+  const favoriteProducts = state.products.filter((p) => p.isFavorite);
 
   let content = <p className="placeholder">Got no favorites yet!</p>;
 

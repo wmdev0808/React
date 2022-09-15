@@ -8,7 +8,10 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 // import productReducer from "./store/reducers/products";
-import ProductsProvider from "./context/product-context";
+// import ProductsProvider from "./context/product-context";
+
+import configureProductsStore from "./hooks-store/products-store";
+import configureCounterStore from "./hooks-store/couter-store";
 
 // const rootReducer = combineReducers({
 //   shop: productReducer,
@@ -17,6 +20,9 @@ import ProductsProvider from "./context/product-context";
 // const store = createStore(rootReducer);
 
 // export type RootState = ReturnType<typeof store.getState>;
+
+configureProductsStore();
+configureCounterStore();
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -28,11 +34,16 @@ root.render(
         <App />
       </BrowserRouter>
     </Provider> */}
-    <ProductsProvider>
+
+    {/* <ProductsProvider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </ProductsProvider>
+    </ProductsProvider> */}
+
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
