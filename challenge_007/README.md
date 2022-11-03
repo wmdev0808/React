@@ -1,4 +1,7 @@
 # Optimization techniques
 
-- React.memo
-- useCallback, useMemo
+## React.memo
+
+## useCallback
+
+## useMemo
