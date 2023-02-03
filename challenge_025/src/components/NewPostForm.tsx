@@ -1,15 +1,16 @@
-import { FormEvent } from "react";
+import { Form } from "react-router-dom";
+
 import classes from "./NewPostForm.module.css";
 
 interface NewPostFormProps {
   onCancel: () => void;
-  onSubmit: (event: FormEvent<HTMLFormElement>) => Promise<void>;
+  // onSubmit: (event: FormEvent<HTMLFormElement>) => Promise<void>;
   submitting: boolean;
 }
 
-function NewPostForm({ onCancel, onSubmit, submitting }: NewPostFormProps) {
+function NewPostForm({ onCancel, submitting }: NewPostFormProps) {
   return (
-    <form className={classes.form} onSubmit={onSubmit}>
+    <Form className={classes.form} method="post" action="/blog/new">
       <fieldset>
         <label htmlFor="title">Title</label>
         <input id="title" type="text" name="title" required minLength={5} />
@@ -30,7 +31,7 @@ function NewPostForm({ onCancel, onSubmit, submitting }: NewPostFormProps) {
       <button disabled={submitting}>
         {submitting ? "Submitting..." : "Create Post"}
       </button>
-    </form>
+    </Form>
   );
 }
 

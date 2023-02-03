@@ -6,6 +6,6 @@ export default interface Post {
 }
 
 export interface PostInput {
-  title: string;
-  body: string;
+  title: FormDataEntryValue | null;
+  body: FormDataEntryValue | null;
 }
