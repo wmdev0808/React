@@ -48,3 +48,5 @@ The collection of React challenges
   - [Writing Tests - The Three "A"s](challenge_022/README.md#writing-tests---the-three-as)
   - [References](challenge_022/README.md#references)
 - [React Hooks](challenge_023/README.md)
+- [React Router 6.3](challenge_024/README.md)
+- [React Router 6.4+ - new Data API](challenge_025/README.md)
