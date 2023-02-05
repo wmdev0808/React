@@ -4,7 +4,7 @@
   - React Hooks are **special functions** that can **only be used in functional components** (and custom hooks)
     - For example, useState(), useEffect, useXYZ()
   - These functions add extra capabilities to functional components
-    - For example, useState() ads functionality that allows functional components to manage internal state
+    - For example, useState() adds functionality that allows functional components to manage internal state
 - Using React Hooks With Functional Components
   - useState
   - useEffect
