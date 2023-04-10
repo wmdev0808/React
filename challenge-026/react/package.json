@@ -1,0 +1,30 @@
+{
+  "name": "@vitest/example-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "coverage": "vitest run --coverage",
+    "test": "vitest",
+    "test:ui": "vitest --ui"
+  },
+  "author": "Paul",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.33",
+    "@types/react-test-renderer": "^18.0.0",
+    "@vitejs/plugin-react": "latest",
+    "@vitest/ui": "latest",
+    "happy-dom": "latest",
+    "jsdom": "latest",
+    "react-test-renderer": "^18.2.0",
+    "vite": "latest",
+    "vitest": "latest"
+  },
+  "stackblitz": {
+    "startCommand": "npm run test:ui"
+  }
+}
