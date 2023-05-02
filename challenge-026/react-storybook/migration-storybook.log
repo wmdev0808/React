@@ -1,0 +1,32 @@
+🔎 checking possible migrations..
+
+⚠️  failed to check fix new-frameworks
+
+TypeError: Cannot read properties of null (reading 'version')
+    at Object.check (/home/dev/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/cli/dist/generate.js:146:8953)
+    at async runFixes (/home/dev/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/cli/dist/generate.js:324:1163)
+    at async automigrate (/home/dev/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/cli/dist/generate.js:321:636)
+    at async doUpgrade (/home/dev/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/cli/dist/generate.js:394:2893)
+    at async withTelemetry (/home/dev/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/core-server/dist/index.js:35:3422)
+    at async upgrade (/home/dev/.npm/_npx/bc7e1e37fcb46ffc/node_modules/@storybook/cli/dist/generate.js:394:3336)
+
+🔎 found a 'github-flavored-markdown-mdx' migration:
+╭ Automigration detected ─────────────────────────────────────────────────────────────╮
+│                                                                                     │
+│   In MDX1 you had the option of using GitHub flavored markdown.                     │
+│                                                                                     │
+│   Storybook 7.0 uses MDX2 for compiling MDX, and thus no longer supports GFM out    │
+│   of the box.                                                                       │
+│   Because of this you need to explicitly add the GFM plugin in the addon-docs       │
+│   options:                                                                          │
+│   https://storybook.js.org/docs/react/writing-docs/mdx#lack-of-github-flavored-ma   │
+│   rkdown-gfm                                                                        │
+│                                                                                     │
+│   We recommend you follow the guide on the link above, however we can add a         │
+│   temporary storybook addon that helps make this migration easier.                  │
+│   We'll install the addon and add it to your storybook config.                      │
+│                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'github-flavored-markdown-mdx' migration on your project? › (Y/n)✔ Do you want to run the 'github-flavored-markdown-mdx' migration on your project? … yes
+✅ Adding "@storybook/addon-mdx-gfm" addon
+✅ ran github-flavored-markdown-mdx migration
