@@ -4,20 +4,10 @@ import { DefaultBodyType, PathParams, rest } from "msw";
 import { App } from "./App";
 import { Post } from "./types";
 import { posts } from "./mockData";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
-const mockedClient = new QueryClient();
 
 export default {
   title: "App",
   component: App,
-  decorators: [
-    (Story) => (
-      <QueryClientProvider client={mockedClient}>
-        <Story />
-      </QueryClientProvider>
-    ),
-  ],
 } as Meta<typeof App>;
 
 type Story = StoryObj<typeof App>;
