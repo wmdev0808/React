@@ -1,0 +1,33 @@
+{
+  "name": "@vitest/example-testing-lib-react",
+  "private": true,
+  "scripts": {
+    "build": "tsc && vite build",
+    "coverage": "vitest run --coverage",
+    "dev": "vite",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:ui": "vitest --ui"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.1",
+    "@vitejs/plugin-react": "^4.0.0",
+    "@vitest/coverage-c8": "^0.30.1",
+    "@vitest/ui": "latest",
+    "jsdom": "latest",
+    "typescript": "^5.0.4",
+    "vite": "latest",
+    "vitest": "latest"
+  },
+  "stackblitz": {
+    "startCommand": "npm run test:ui"
+  }
+}
