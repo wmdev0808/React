@@ -4,6 +4,7 @@ import {
   render,
   screen,
   userEvent,
+  waitFor,
   waitForElementToBeRemoved,
 } from "./utils/test-utils";
 import App from "./App";
@@ -23,10 +24,16 @@ it("Should return posts when clicking fetch button", async () => {
     })
   ).toBeDefined();
 
-  await userEvent.click(screen.getByRole("button", { name: "Fetch Posts" }));
+  userEvent.click(screen.getByRole("button", { name: "Fetch Posts" }));
+  screen.debug();
 
   // await waitForElementToBeRemoved(() => screen.queryByLabelText("loading"));
+  // The above only works up to React 17.x
+  // Workaround for React 18.x
+  const loadingIndicator = await screen.findByLabelText("loading");
+  await waitFor(() => expect(loadingIndicator).not.toBeInTheDocument());
 
+  screen.debug();
   posts.forEach((post) => {
     expect(
       screen.getByRole("heading", { name: post.title, level: 2 })
@@ -49,11 +56,11 @@ it("Should return posts when clicking fetch with graphql button", async () => {
     })
   ).toBeDefined();
 
-  await userEvent.click(
-    screen.getByRole("button", { name: "Fetch Posts GraphQL" })
-  );
+  userEvent.click(screen.getByRole("button", { name: "Fetch Posts GraphQL" }));
 
   // await waitForElementToBeRemoved(() => screen.queryByLabelText("loading"));
+  const loadingIndicator = await screen.findByLabelText("loading");
+  await waitFor(() => expect(loadingIndicator).not.toBeInTheDocument());
 
   posts.forEach((post) => {
     expect(

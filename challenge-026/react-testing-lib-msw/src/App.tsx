@@ -33,12 +33,10 @@ function App() {
       }
     }
   `;
-  const [postsGql, setPostsGql] = React.useState<Post[]>([]);
-  const [runQuery, { loading, data }] = useLazyQuery<{ posts?: Post[] }>(
+  const [postsGql, setPostsGql] = React.useState<Post[] | undefined>([]);
+  const [runQuery, { loading, data }] = useLazyQuery<{ posts: Post[] }>(
     GET_POSTS,
-    {
-      onCompleted: () => setPostsGql(data?.posts || []),
-    }
+    { onCompleted: () => setPostsGql(data?.posts) }
   );
 
   return (
@@ -55,7 +53,8 @@ function App() {
       <button onClick={() => fetchPosts()}>Fetch Posts</button>
 
       {loading && <span aria-label="loading">Loading...</span>}
-      {postsGql.length > 0 &&
+      {postsGql &&
+        postsGql.length > 0 &&
         postsGql.map((post) => (
           <article key={post.id}>
             <h2>{post.title}</h2>
