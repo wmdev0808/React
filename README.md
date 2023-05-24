@@ -51,3 +51,4 @@ The collection of React challenges
 - [React Router 6.3](challenge-024/README.md)
 - [React Router 6.4+ - new Data API](challenge-025/README.md)
 - [Vitest](challenge-026/README.md)
+- [Test challenges](challenge-027/README.md)
