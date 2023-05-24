@@ -2,9 +2,15 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import LoginForm from './components/LoginForm'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  function handleSubmit(username: string, password: string) {
+    console.log(`username: `, username)
+    console.log(`password: `, password)
+  }
 
   return (
     <>
@@ -28,6 +34,10 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <div>
+        <h1>Task 001</h1>
+        <LoginForm onSubmit={handleSubmit} />
+      </div>
     </>
   )
 }
