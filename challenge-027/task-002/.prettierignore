@@ -1,0 +1,14 @@
+# Ignore artifacts:
+build/
+dist/
+temp/
+coverage
+
+node_modules/
+package-lock.json
+yarn.lock
+package.json
+
+pnpm-lock.yaml
+pnpm-workspace.yaml
+
