@@ -63,7 +63,7 @@
   ```
   import Styled from "styled-components";
 
-  // Use console.log() and browser consle for debugging
+  // Use console.log() and browser console for debugging
 
   export const Tag = styled.div``;
 
