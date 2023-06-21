@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@/pages/*": ["./pages/*"],
+        "@/components/*": ["./components/*"],
+        "@/stores/*": ["./stores/*"],
+        "@/services/*": ["./services/*"],
+        "@/utils/*": ["./utils/*"],
+        "@/i18nUtils/*": ["./i18nUtils/*"],
+        "@/layouts/*": ["./layouts/*"],
+        "@/styles/*": ["./styles/*"],
+        "@/public/*": ["./public/*"],
+        "@/json/*": ["./json/*"]
+      }
+    }
+}
