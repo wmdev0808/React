@@ -18,6 +18,7 @@ const customJestConfig = {
     '^@/json/(.*)$': '<rootDir>/json/$1',
   },
   testEnvironment: 'jest-environment-jsdom',
+  resolver: '<rootDir>/jest.resolver.js',
 }
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
